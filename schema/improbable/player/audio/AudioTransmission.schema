@@ -1,0 +1,13 @@
+package improbable.audio;
+
+type SendAudio {
+    list<float> samples = 1;
+}
+
+type StopSendingAudio {}
+
+component AudioTransmission {
+    id = 1101;
+    event SendAudio send_audio;
+    event StopSendingAudio stop_sending_audio;
+}

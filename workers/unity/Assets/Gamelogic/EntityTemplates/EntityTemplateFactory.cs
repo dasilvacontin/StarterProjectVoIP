@@ -7,6 +7,7 @@ using Improbable.Worker;
 using Quaternion = UnityEngine.Quaternion;
 using UnityEngine;
 using Improbable.Unity.Entity;
+using Improbable.Audio;
 
 namespace Assets.Gamelogic.EntityTemplates
 {
@@ -36,6 +37,7 @@ namespace Assets.Gamelogic.EntityTemplates
                 .AddComponent(new Rotation.Data(Quaternion.identity.ToNativeQuaternion()), CommonRequirementSets.PhysicsOnly)
                 .AddComponent(new ClientAuthorityCheck.Data(), CommonRequirementSets.SpecificClientOnly(clientId))
                 .AddComponent(new ClientConnection.Data(SimulationSettings.TotalHeartbeatsBeforeTimeout), CommonRequirementSets.PhysicsOnly)
+                .AddComponent(new AudioTransmission.Data(), CommonRequirementSets.SpecificClientOnly(clientId))
                 .Build();
 
             return playerTemplate;

@@ -4,6 +4,10 @@ namespace Assets.Gamelogic.Core
 {
     public static class SimulationSettings
     {
+        public static readonly int Frequency = 44100;
+        public static readonly int MaxAudioClipSamples = 100 * Frequency;
+        public static readonly int AudioTransmissionChannels = 1;
+
         public static readonly string PlayerPrefabName = "Player";
         public static readonly string PlayerCreatorPrefabName = "PlayerCreator";
         public static readonly string CubePrefabName = "Cube";
